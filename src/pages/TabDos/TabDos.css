@@ -1,0 +1,46 @@
+/* Estilos exclusivos de la Pestaña 2 — clases con prefijo ".tabdos__*" */
+
+.tabdos__header {
+  border-left: 5px solid #16a34a;
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.tabdos__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.tabdos__subtitle {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.tabdos__cards {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.tabdos__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.tabdos__card-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #15803d;
+}
+
+.tabdos__card-text {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.925rem;
+}
