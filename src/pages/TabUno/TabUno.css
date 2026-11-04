@@ -294,3 +294,36 @@
     align-items: flex-start;
   }
 }
+
+/* Imágenes: portadas y escenas */
+.poster {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.scene {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.scene:hover {
+  transform: scale(1.02);
+}
+
+.tabuno__poster {
+  overflow: hidden;
+}
+
+.tabuno__scene {
+  overflow: hidden;
+}
+
