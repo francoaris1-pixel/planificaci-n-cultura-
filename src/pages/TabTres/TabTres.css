@@ -1,4 +1,4 @@
-/* Estilos exclusivos de la Pestaña 3 — clases con prefijo ".tabtres__*" */
+/* Estilos exclusivos de la Pestaña 3 */
 
 .tabtres__header {
   border-left: 5px solid #ea580c;
@@ -69,4 +69,21 @@
 
 .tabtres__button:hover {
   background-color: #c2410c;
+}
+
+/* BOTÓN DE ENLACE */
+.tabtres__link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.tabtres__link:hover {
+  background-color: #1d4ed8;
 }
