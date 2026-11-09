@@ -43,7 +43,7 @@ export default function TabTres() {
       {/* BOTÓN CON LINK */}
       <a
         className="tabtres__link"
-        href="https://www.google.com"
+        href="plani-accion-cine-de-accion--ramon544caballe.replit.app"
         target="_blank"
         rel="noopener noreferrer"
       >
