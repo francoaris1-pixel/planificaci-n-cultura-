@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './TabTres.css'
 
 // PESTAÑA 3 — integrante C
-// Trabaja solo dentro de esta carpeta (src/pages/TabTres/).
 export default function TabTres() {
   const [valor, setValor] = useState('')
 
@@ -15,7 +14,9 @@ export default function TabTres() {
     <div className="tabtres">
       <header className="tabtres__header">
         <h1 className="tabtres__title">Pestaña 3</h1>
-        <p className="tabtres__subtitle">Contenido a cargo del integrante C.</p>
+        <p className="tabtres__subtitle">
+          Contenido a cargo del integrante C.
+        </p>
       </header>
 
       <form className="tabtres__form" onSubmit={handleSubmit}>
@@ -23,6 +24,7 @@ export default function TabTres() {
           <label className="tabtres__label" htmlFor="tabtres-campo">
             Campo de ejemplo
           </label>
+
           <input
             id="tabtres-campo"
             className="tabtres__input"
@@ -37,6 +39,17 @@ export default function TabTres() {
           Enviar
         </button>
       </form>
+
+      {/* BOTÓN CON LINK */}
+      <a
+        className="tabtres__link"
+        href="https://www.google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ir a la página
+      </a>
+
     </div>
   )
 }
