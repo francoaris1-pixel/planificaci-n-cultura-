@@ -3,7 +3,10 @@ import './Home.css'
 
 const cards = [
   { path: '/pestana-1', title: 'Pestaña 1', text: 'Responsable: integrante A.' },
-  { path: '/pestana-2', title: 'Pestaña 2', text: 'Responsable: integrante B.' },
+  {
+    path: '/pestana-2',
+    title: 'Comedia-Parodia',
+  },
   { path: '/pestana-3', title: 'Pestaña 3', text: 'Responsable: integrante C.' },
   { path: '/pestana-4', title: 'Pestaña 4', text: 'Responsable: integrante D.' },
 ]
@@ -23,7 +26,7 @@ export default function Home() {
         {cards.map(({ path, title, text }) => (
           <Link key={path} to={path} className="home__card">
             <h2 className="home__card-title">{title}</h2>
-            <p className="home__card-text">{text}</p>
+            {text && <p className="home__card-text">{text}</p>}
           </Link>
         ))}
       </section>
