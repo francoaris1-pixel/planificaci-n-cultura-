@@ -9,7 +9,7 @@ import TabCuatro from './pages/TabCuatro/TabCuatro.jsx'
 const routes = [
   { path: '/', name: 'Principal', element: <Home /> },
   { path: '/pestana-1', name: 'Pestaña 1', element: <TabUno /> },
-  { path: '/pestana-2', name: 'Pestaña 2', element: <TabDos /> },
+  { path: '/pestana-2', name: 'Comedia-Parodia', element: <TabDos /> },
   { path: '/pestana-3', name: 'Pestaña 3', element: <TabTres /> },
   { path: '/pestana-4', name: 'Pestaña 4', element: <TabCuatro /> },
 ]
