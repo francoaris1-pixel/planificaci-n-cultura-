@@ -1,6 +1,6 @@
 import './TabCuatro.css'
 
-// PESTAÑA 3 — integrante D
+// PESTAÑA 4 — integrante D
 export default function TabTres() {
   return (
     <div className="tabtres">
