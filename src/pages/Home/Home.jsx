@@ -4,7 +4,7 @@ import './Home.css'
 const cards = [
   {
     path: '/pestana-1',
-    title: 'Pestaña 1: Cine de Terror',
+    title: 'Terror',
     text: 'Expediente oscuro sobre el terror psicológico y rural contemporáneo (Cuando acecha la maldad, Obsesión y Haz que regrese).',
     accent: 'border-red-600',
     badge: 'bg-red-500/15 text-red-300 ring-1 ring-red-500/30',
