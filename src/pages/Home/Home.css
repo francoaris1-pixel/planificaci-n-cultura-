@@ -66,7 +66,49 @@
 
 .home__section-title {
   font-size: 1.35rem;
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
+}
+
+.home__section-intro {
+  margin: 0 0 1.25rem;
+  max-width: 720px;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.home__topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.home__topic {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.home__topic:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+.home__topic-title {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.home__topic-text {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .home__list {

@@ -16,3 +16,28 @@
   color: var(--color-muted);
   font-size: 0.875rem;
 }
+
+/* =========================================================
+   Variantes condicionales del footer (activadas por ruta
+   desde el Layout). Pestañas 2-4 usan el estilo original.
+   ========================================================= */
+
+/* --- Vista Principal (/) --- */
+.footer--principal {
+  background-color: #020617; /* slate-950 */
+  border-top: 1px solid rgba(30, 41, 59, 0.8); /* slate-800/80 */
+}
+
+.footer--principal .footer__text {
+  color: #94a3b8; /* slate-400 */
+}
+
+/* --- Vista Pestaña 1 --- */
+.footer--tabuno {
+  background-color: #000000;
+  border-top: 1px solid #171717; /* neutral-900 */
+}
+
+.footer--tabuno .footer__text {
+  color: #737373; /* neutral-500 */
+}

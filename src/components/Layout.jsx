@@ -5,18 +5,36 @@ import './Layout.css'
 
 export default function Layout() {
   const { pathname } = useLocation()
+
+  // Fondos condicionales: cada pestaña define el ambiente del contenedor padre
   const isTabUno = pathname === '/pestana-1'
+  const isPrincipal = pathname === '/'
+  const isDark = isTabUno || isPrincipal
+
+  const layoutClass = [
+    'layout',
+    isTabUno ? 'layout--tabuno' : '',
+    isPrincipal ? 'layout--principal' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <div
-      className={`layout ${isTabUno ? 'bg-black' : ''}`}
-      style={isTabUno ? { backgroundColor: '#000000' } : undefined}
+      className={layoutClass}
+      style={
+        isTabUno
+          ? { backgroundColor: '#000000' }
+          : isPrincipal
+            ? { backgroundColor: '#020617' } // slate-950
+            : undefined
+      }
     >
-      <Navbar />
+      <Navbar dark={isDark} darkVariant={isTabUno ? 'tabuno' : 'principal'} />
       <main className="layout__main">
         <Outlet />
       </main>
-      <Footer />
+      <Footer dark={isDark} darkVariant={isTabUno ? 'tabuno' : 'principal'} />
     </div>
   )
 }

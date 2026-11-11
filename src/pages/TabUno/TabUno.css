@@ -1,51 +1,70 @@
-﻿/* Estilos exclusivos de la PestaÃ±a 1 â€” recomendaciones cinematogrÃ¡ficas */
+﻿/* ============================================================
+   TABUNO — Archivo cinematográfico · Pestaña 1
+   Fondo negro absoluto + atmósfera gélida + estilo expediente
+   ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap');
 
 .tabuno {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: #000000;
   color: #e5e5e5;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
   padding: 1.5rem 1.25rem 3rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Fondo animado congelado */
+/* ---------- ATMÓSFERA GÉLIDA ANIMADA (fondo) ---------- */
 .tabuno__frozen {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.04), transparent 45%),
-    linear-gradient(180deg, #000000 0%, #050505 100%);
-  animation: tabuno-freeze 18s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 20% 25%, rgba(120, 170, 220, 0.07), transparent 45%),
+    radial-gradient(ellipse at 80% 75%, rgba(139, 0, 0, 0.09), transparent 50%),
+    radial-gradient(ellipse at 60% 10%, rgba(200, 225, 255, 0.04), transparent 40%),
+    #000000;
+  animation: tabuno-freeze 22s ease-in-out infinite alternate;
 }
 
+/* Escarcha / vaho helado en movimiento muy lento */
 .tabuno__frozen::before {
   content: '';
   position: absolute;
-  inset: -20%;
+  inset: -25%;
   background-image:
-    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px, 120px 120px;
-  background-position: 0 0, 30px 30px;
-  animation: tabuno-frost 24s linear infinite;
-  opacity: 0.5;
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(180, 210, 255, 0.04) 1px, transparent 1px);
+  background-size: 70px 70px, 130px 130px;
+  background-position: 0 0, 35px 35px;
+  animation: tabuno-frost 36s linear infinite;
+  opacity: 0.55;
+}
+
+/* Bruma gélida que sube lentamente */
+.tabuno__frozen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(140, 180, 230, 0.05), transparent 60%);
+  animation: tabuno-breathe 14s ease-in-out infinite alternate;
 }
 
 @keyframes tabuno-freeze {
-  0% { filter: brightness(1) contrast(1); transform: scale(1); }
-  100% { filter: brightness(1.05) contrast(1.05); transform: scale(1.02); }
+  0%   { transform: scale(1);    filter: brightness(1) saturate(1); }
+  100% { transform: scale(1.03); filter: brightness(1.08) saturate(1.1); }
 }
 
 @keyframes tabuno-frost {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-60px, -60px); }
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-70px, -70px); }
+}
+
+@keyframes tabuno-breathe {
+  0%   { opacity: 0.35; transform: translateY(2%); }
+  100% { opacity: 0.8;  transform: translateY(-2%); }
 }
 
 .tabuno__content {
@@ -55,21 +74,23 @@
   margin: 0 auto;
 }
 
-/* Header */
+/* ---------- HEADER / NAVEGACIÓN ---------- */
 .tabuno__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid #1a1a1a;
   flex-wrap: wrap;
 }
 
 .tabuno__brand {
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
   font-weight: 600;
+  color: #8B0000;
 }
 
 .tabuno__nav {
@@ -81,11 +102,12 @@
 .tabuno__nav-link {
   background: transparent;
   border: 1px solid transparent;
+  color: #8a8a8a;
   font-family: inherit;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.45rem 0.85rem;
+  padding: 0.45rem 0.9rem;
   cursor: pointer;
   transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }
@@ -101,136 +123,193 @@
   background-color: #0d0d0d;
 }
 
-/* Featured */
+/* ---------- SECCIÓN PRINCIPAL (EXPEDIENTE) ---------- */
 .tabuno__featured {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .tabuno__featured-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: start;
 }
 
 @media (min-width: 768px) {
   .tabuno__featured-grid {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 280px 1fr;
   }
 }
 
+/* Marco de póster */
 .tabuno__poster {
-  aspect-ratio: 2 / 3;
+  margin: 0;
   background-color: #0d0d0d;
   border: 1px solid #1a1a1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6b6b6b;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(139, 0, 0, 0.12), 0 20px 40px -20px rgba(0, 0, 0, 0.9);
 }
 
-.tabuno__poster--small {
+.tabuno__poster--large {
   aspect-ratio: 2 / 3;
-  max-width: 180px;
+}
+
+.tabuno__poster--card {
+  aspect-ratio: 2 / 3;
+  max-width: 220px;
+}
+
+.tabuno__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .tabuno__eyebrow {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.6rem;
   font-size: 0.7rem;
   letter-spacing: 0.35em;
   font-weight: 600;
+  color: #8B0000;
 }
 
 .tabuno__title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
   font-weight: 800;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
+  letter-spacing: 0.04em;
+  line-height: 1.08;
   color: #f2f2f2;
 }
 
 .tabuno__classified {
-  margin: 0 0 1rem;
-  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
   color: #9a9a9a;
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 640px;
+}
+
+/* Reglas de supervivencia — rojo carmesí oscuro */
+.tabuno__rules-label {
+  margin: 0 0 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #6b6b6b;
 }
 
 .tabuno__rules {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.5rem;
   display: grid;
   gap: 0.5rem;
-  max-width: 520px;
+  max-width: 540px;
 }
 
 .tabuno__rule {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  padding: 0.7rem 0.9rem;
+  padding: 0.7rem 0.95rem;
   background-color: #0d0d0d;
   border: 1px solid #1a1a1a;
+  border-left: 2px solid #8B0000;
   font-size: 0.9rem;
-  color: #e5e5e5;
+  color: #8B0000;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.tabuno__rule:hover {
+  border-color: #8B0000;
+  border-left-color: #8B0000;
+  background-color: #110a0a;
 }
 
 .tabuno__rule-index {
-  color: #8B0000;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
+  color: #8B0000;
 }
 
+.tabuno__rule-text {
+  color: #b34040;
+  font-weight: 500;
+}
+
+/* ---------- ESCENAS DE IMPACTO (3 columnas) ---------- */
 .tabuno__scenes {
-  margin-top: 1.5rem;
-}
-
-.tabuno__scene-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-.tabuno__scene {
-  aspect-ratio: 16 / 9;
-  background-color: #0d0d0d;
-  border: 1px solid #1a1a1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6b6b6b;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-}
-
-/* Cartelera */
-.tabuno__cartelera {
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .tabuno__section-title {
   margin: 0 0 1.25rem;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #f2f2f2;
   border-left: 3px solid #8B0000;
   padding-left: 0.75rem;
 }
 
+.tabuno__scene-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .tabuno__scene-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tabuno__scene {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  overflow: hidden;
+}
+
+.tabuno__scene:hover .tabuno__img {
+  transform: scale(1.04);
+}
+
+.tabuno__scene-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(229, 229, 229, 0.75);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), transparent);
+  text-transform: uppercase;
+}
+
+/* ---------- CARTELERA COMPLEMENTARIA (2 tarjetas) ---------- */
+.tabuno__cartelera {
+  margin-bottom: 2rem;
+}
+
 .tabuno__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .tabuno__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .tabuno__card {
@@ -239,18 +318,19 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  gap: 0.85rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tabuno__card:hover {
   border-color: #8B0000;
+  box-shadow: 0 0 24px -8px rgba(139, 0, 0, 0.45);
   transform: translateY(-2px);
 }
 
 .tabuno__card-title {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #f2f2f2;
 }
@@ -263,9 +343,9 @@
 
 .tabuno__card-desc {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: #9a9a9a;
-  line-height: 1.5;
+  line-height: 1.55;
   flex: 1;
 }
 
@@ -273,12 +353,13 @@
   align-self: flex-start;
   background: transparent;
   border: 1px solid #8B0000;
-  color: #8B0000;
+  color: #c94a4a;
   font-family: inherit;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 0.45rem 0.9rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -288,42 +369,62 @@
   color: #f2f2f2;
 }
 
+/* ---------- ANÁLISIS MEDIÁTICO Y CULTURAL ---------- */
+.tabuno__analisis {
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.tabuno__analisis-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tabuno__analisis-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tabuno__analisis-card {
+  background-color: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.tabuno__analisis-card:hover {
+  border-color: rgba(139, 0, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+  .tabuno__analisis-card--wide {
+    grid-column: span 2;
+  }
+}
+
+.tabuno__analisis-title {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f2f2f2;
+  border-left: 2px solid #8B0000;
+  padding-left: 0.6rem;
+}
+
+.tabuno__analisis-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #c9c9c9;
+  line-height: 1.7;
+}
+
+/* ---------- Responsive header ---------- */
 @media (max-width: 640px) {
   .tabuno__header {
     flex-direction: column;
     align-items: flex-start;
   }
 }
-
-/* Imágenes: portadas y escenas */
-.poster {
-  max-width: 100%;
-  height: auto;
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.scene {
-  max-width: 100%;
-  height: auto;
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.scene:hover {
-  transform: scale(1.02);
-}
-
-.tabuno__poster {
-  overflow: hidden;
-}
-
-.tabuno__scene {
-  overflow: hidden;
-}
-

@@ -58,3 +58,77 @@
   background-color: var(--color-primary-dark);
   color: #ffffff;
 }
+
+/* =========================================================
+   Variante condicional oscura — SOLO se aplica cuando el
+   Layout indica la vista activa (Principal o Pestaña 1).
+   La barra en Pestañas 2-4 sigue usando los estilos originales.
+   ========================================================= */
+
+/* --- Vista Principal (/) --- */
+.navbar--principal {
+  background-color: rgba(2, 6, 23, 0.9); /* slate-950/90 */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.8); /* slate-800/80 */
+}
+
+.navbar--principal .navbar__brand {
+  color: #ffffff;
+}
+
+.navbar--principal .navbar__brand span {
+  color: #60a5fa; /* blue-400 para el "-Cult" sobre fondo oscuro */
+}
+
+.navbar--principal .navbar__link--dark {
+  color: #cbd5e1; /* slate-300 */
+}
+
+.navbar--principal .navbar__link--dark:hover {
+  background-color: rgba(30, 41, 59, 0.6);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar--principal .navbar__link--active--dark {
+  background-color: #2563eb; /* blue-600 */
+  color: #ffffff;
+}
+
+.navbar--principal .navbar__link--active--dark:hover {
+  background-color: #3b82f6; /* blue-500 */
+  color: #ffffff;
+}
+
+/* --- Vista Pestaña 1: barra integrada al negro absoluto --- */
+.navbar--tabuno {
+  background-color: #000000;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.navbar--tabuno .navbar__brand {
+  color: #f2f2f2;
+}
+
+.navbar--tabuno .navbar__brand span {
+  color: #8B0000;
+}
+
+.navbar--tabuno .navbar__link--dark {
+  color: #9a9a9a;
+}
+
+.navbar--tabuno .navbar__link--dark:hover {
+  color: #e5e5e5;
+  background-color: #0d0d0d;
+}
+
+.navbar--tabuno .navbar__link--active--dark {
+  background-color: #8B0000;
+  color: #f2f2f2;
+}
+
+.navbar--tabuno .navbar__link--active--dark:hover {
+  background-color: #a00000;
+  color: #f2f2f2;
+}

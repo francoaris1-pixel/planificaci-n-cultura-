@@ -11,3 +11,21 @@
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
+/* =========================================================
+   Variantes condicionales (solo se activan por ruta)
+   - Principal (/): fondo azul medianoche slate-950, sin
+     bordes ni márgenes blancos alrededor del contenido.
+   - Pestaña 1: fondo negro absoluto (ya existente).
+   - Pestañas 2-4: usan el layout original sin cambios.
+   ========================================================= */
+
+.layout--principal {
+  background-color: #020617;
+}
+
+/* Elimina el marco blanco/márgenes del main solo en Principal */
+.layout--principal .layout__main {
+  max-width: none;
+  padding: 0;
+}
