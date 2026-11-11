@@ -1,38 +1,24 @@
-import { useState } from 'react'
 import './TabCuatro.css'
 
-// PESTAÑA 4 — integrante D
-// Trabaja solo dentro de esta carpeta (src/pages/TabCuatro/).
-export default function TabCuatro() {
-  const [contador, setContador] = useState(0)
-
+// PESTAÑA 3 — integrante C
+export default function TabTres() {
   return (
-    <div className="tabcuatro">
-      <header className="tabcuatro__header">
-        <h1 className="tabcuatro__title">Pestaña 4</h1>
-        <p className="tabcuatro__subtitle">Contenido a cargo del integrante D.</p>
+    <div className="tabtres">
+      <header className="tabtres__header">
+        <h1 className="tabtres__title">Pestaña 3</h1>
+        <p className="tabtres__subtitle">
+          Contenido a cargo del integrante C.
+        </p>
       </header>
 
-      <section className="tabcuatro__panel">
-        <h2>Componente interactivo de ejemplo</h2>
-        <div className="tabcuatro__counter">
-          <button
-            className="tabcuatro__button tabcuatro__button--ghost"
-            type="button"
-            onClick={() => setContador((valor) => valor - 1)}
-          >
-            −
-          </button>
-          <span className="tabcuatro__value">{contador}</span>
-          <button
-            className="tabcuatro__button"
-            type="button"
-            onClick={() => setContador((valor) => valor + 1)}
-          >
-            +
-          </button>
-        </div>
-      </section>
+      <a
+        className="tabtres__link"
+        href="https://plani-accion-cine-de-accion--ramon544caballe.replit.app/#origen"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ir a Plani-Acción
+      </a>
     </div>
   )
 }
