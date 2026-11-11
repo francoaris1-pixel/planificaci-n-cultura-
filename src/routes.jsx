@@ -10,8 +10,8 @@ const routes = [
   { path: '/', name: 'Principal', element: <Home /> },
   { path: '/pestana-1', name: 'Terror', element: <TabUno /> },
   { path: '/pestana-2', name: 'Comedia-Parodia', element: <TabDos /> },
-  { path: '/pestana-3', name: 'Pestaña 3', element: <TabTres /> },
-  { path: '/pestana-4', name: 'Pestaña 4', element: <TabCuatro /> },
+  { path: '/pestana-3', name: 'Anime', element: <TabTres /> },
+  { path: '/pestana-4', name: 'Accion', element: <TabCuatro /> },
 ]
 
 export default routes
