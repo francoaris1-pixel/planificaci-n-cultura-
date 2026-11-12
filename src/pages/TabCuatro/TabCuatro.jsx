@@ -1,5 +1,5 @@
 
-.tabtres {
+.tabcuatro {
   --bg: #08090b;
   --surface: #151719;
   --border: #34383d;
